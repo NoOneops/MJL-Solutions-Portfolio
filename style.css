@@ -271,21 +271,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   margin-bottom: var(--space-lg);
 }
 
-.photo-placeholder {
+.profile-photo {
   aspect-ratio: 1 / 1;
-  background: var(--surface);
-  border: 2px dashed var(--border);
+  width: 100%;
+  object-fit: cover;
   border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 2rem;
-  gap: 0.5rem;
+  border: 1px solid var(--border);
 }
-.photo-placeholder p { font-size: 0.85rem; }
 
 .about-text h3 { font-size: 1.5rem; margin-bottom: 0.25rem; }
 .about-text .role { color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; }
@@ -387,9 +379,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 .project-image {
   aspect-ratio: 16 / 10;
+  background: var(--surface);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Placeholder version (still used by Creative Content cards for now) */
+.project-image.placeholder {
   background: repeating-linear-gradient(45deg, var(--bg), var(--bg) 10px, var(--surface) 10px, var(--surface) 20px);
   border: 1px dashed var(--border);
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -397,9 +400,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   color: var(--text-secondary);
   font-size: 1.5rem;
   gap: 0.3rem;
-  margin-bottom: 0.75rem;
 }
-.project-image p { font-size: 0.75rem; }
+.project-image.placeholder p { font-size: 0.75rem; }
 
 .project-card h3 { font-size: 1rem; margin: 0.4rem 0 0.25rem; }
 .project-card p { color: var(--text-secondary); font-size: 0.9rem; }
